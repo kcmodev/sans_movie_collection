@@ -3,6 +3,9 @@
 # JetBrains IDE
 ./idea
 
+# Keys
+config/default.json
+
 # dependencies
 /node_modules
 /.pnp

@@ -6,7 +6,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: white;
 }
 
@@ -18,7 +18,7 @@
 
 .formInput input {
   margin-left: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   border-radius: 5px;
 }
 
@@ -43,6 +43,10 @@
 hr {
   width: 50%;
   margin-top: 2rem;
+}
+
+p {
+  font-size: 1.25rem;
 }
 
 
