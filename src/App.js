@@ -1,26 +1,14 @@
 import logo from './logo.svg';
 import './App.css';
 import AddMovie from "./components/AddMovie";
+import DisplayStoredMovies from "./components/StoredMovies";
 
 function App() {
   return (
 
     <div className="App">
-      <AddMovie />
-      {/*<header className="App-header">*/}
-      {/*  <img src={logo} className="App-logo" alt="logo" />*/}
-      {/*  <p>*/}
-      {/*    Edit <code>src/App.js</code> and save to reload.*/}
-      {/*  </p>*/}
-      {/*  <a*/}
-      {/*    className="App-link"*/}
-      {/*    href="https://reactjs.org"*/}
-      {/*    target="_blank"*/}
-      {/*    rel="noopener noreferrer"*/}
-      {/*  >*/}
-      {/*    Learn React*/}
-      {/*  </a>*/}
-      {/*</header>*/}
+        <AddMovie />
+        {/*<DisplayStoredMovies />*/}
     </div>
   );
 }

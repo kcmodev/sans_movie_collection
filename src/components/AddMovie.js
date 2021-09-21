@@ -60,18 +60,18 @@ const AddMovie = () => {
             {/* CHANGE TO RADIO BUTTONS/DROPDOWN */}
             <div className='formInput'>
                 <label>Rating:</label>
-                <input
-                    type='text'
-                    value={rating}
-                    placeholder={'  Rating*'}
-                    onChange={(e) => saveMovie(e.target.value)}
-                />
+                <select onChange={(e) => saveMovie(e.target.value)}>
+                    <option value={1}>1 star</option>
+                    <option value={1}>2 stars</option>
+                    <option value={1}>3 stars</option>
+                    <option value={1}>4 stars</option>
+                    <option value={1}>5 stars</option>
+                </select>
             </div>
 
             <div className={'submitDiv'}>
                 <input type='submit' value='Save Movie' className='formSubmitButton' />
             </div>
-
         </form>
     )
 }
