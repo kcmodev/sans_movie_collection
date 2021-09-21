@@ -40,4 +40,9 @@
   display: inline-block;
 }
 
+hr {
+  width: 50%;
+  margin-top: 2rem;
+}
+
 

@@ -1,18 +1,28 @@
 import {useState} from "react";
 
-const AddMovie = () => {
+const AddMovie = ({onSubmit}) => {
     const [title, setTitle] = useState('');
     const [format, setFormat] = useState('');
-    const [length, setLength] = useState('');
+    const [filmLength, setLength] = useState('');
     const [releaseYear, setReleaseYear] = useState('');
     const [rating, setRating] = useState('');
 
     const saveMovie = (e) => {
-        e.preventDefault()
+        e.preventDefault();
+
+        onSubmit({title, format, length: filmLength, releaseYear, rating})
+
+        // Reset values after submit
+        setTitle('');
+        setFormat('');
+        setLength('');
+        setReleaseYear('');
+        setRating('');
+
     }
 
     return (
-        <form className={'addMovieForm'}>
+        <form className={'addMovieForm'} onSubmit={saveMovie}>
             <h3> SANS Movie Collection</h3>
             <div className='formInput'>
                 <div className={'labelContainer'}>
@@ -22,7 +32,8 @@ const AddMovie = () => {
                     type='text'
                     placeholder='  Title*'
                     value={title}
-                    onChange={(e) => saveMovie(e.target.value)}
+                    onChange={(e) => setTitle(e.target.value)}
+                    required={true}
                 />
             </div>
 
@@ -33,7 +44,8 @@ const AddMovie = () => {
                     type='text'
                     placeholder='  Format*'
                     value={format}
-                    onChange={(e) => saveMovie(e.target.value)}
+                    onChange={(e) => setFormat(e.target.value)}
+                    required={true}
                 />
             </div>
 
@@ -41,9 +53,10 @@ const AddMovie = () => {
                 <label>Length</label>
                 <input
                     type='text'
-                    value={length}
+                    value={filmLength}
                     placeholder={'  Length*'}
-                    onChange={(e) => saveMovie(e.target.value)}
+                    onChange={(e) => setLength(e.target.value)}
+                    required={true}
                 />
             </div>
 
@@ -53,14 +66,15 @@ const AddMovie = () => {
                     type='text'
                     value={releaseYear}
                     placeholder={'  Release Year*'}
-                    onChange={(e) => saveMovie(e.target.value)}
+                    onChange={(e) => setReleaseYear(e.target.value)}
+                    required={true}
                 />
             </div>
 
-            {/* CHANGE TO RADIO BUTTONS/DROPDOWN */}
             <div className='formInput'>
                 <label>Rating:</label>
-                <select onChange={(e) => saveMovie(e.target.value)}>
+                <select onChange={(e) => setRating(e.target.value)}
+                        required={true}>
                     <option value={1}>1 star</option>
                     <option value={1}>2 stars</option>
                     <option value={1}>3 stars</option>
