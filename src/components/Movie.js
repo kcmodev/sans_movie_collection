@@ -1,16 +1,11 @@
-import {useState} from "react";
-
 const Movie = ({movie}) => {
-
-
     return (
         <>
-            <p>{movie.index}{". "}
-                {" "}{movie.title} ||
-                {" "}{movie.format}  ||
-                {" "}{movie.filmLength}{" minutes"} ||
-                {" "}{movie.releaseYear} ||
-                {" "}{movie.rating}</p>
+            <p> {" "}{movie["title"]} ||
+                {" "}{movie["format"]}  ||
+                {" "}{movie["filmLength"]}{" minutes"} ||
+                {" "}{movie["releaseYear"]} ||
+                {" "}{movie["rating"]}</p>
         </>
     )
 };

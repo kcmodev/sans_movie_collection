@@ -4,7 +4,7 @@
 ./idea
 
 # Keys
-config/default.json
+/src/config/config.js
 
 # dependencies
 /node_modules

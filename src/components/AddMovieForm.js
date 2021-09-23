@@ -1,16 +1,18 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
+import {addMovie} from "../actions";
 
-const AddMovie = ({onSubmit}) => {
+const AddMovieForm = () => {
+    // useEffect(() => {  getMovies().then(() => {console.log('Movies retrieved')}) })
+
     const [title, setTitle] = useState('');
     const [format, setFormat] = useState('');
     const [filmLength, setLength] = useState('');
     const [releaseYear, setReleaseYear] = useState('');
     const [rating, setRating] = useState('');
 
-    const saveMovie = (e) => {
+    const saveMovie = async (e) => {
         e.preventDefault();
-
-        onSubmit({title, format, length: filmLength, releaseYear, rating})
+        // await addMovie({title, format, filmLength, releaseYear, rating})
 
         // Reset values after submit
         setTitle('');
@@ -90,4 +92,4 @@ const AddMovie = ({onSubmit}) => {
     )
 }
 
-export default AddMovie
+export default AddMovieForm

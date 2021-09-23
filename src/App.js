@@ -1,15 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
-import AddMovie from "./components/AddMovie";
-import DisplayStoredMovies from "./components/StoredMovies";
+import LandingPage from "./components/LandingPage";
+import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
+import Routes from "./routes/Routes";
 
 function App() {
   return (
-
-    <div className="App">
-        <AddMovie />
-        <DisplayStoredMovies />
-    </div>
+      <Router>
+          <div className="App">
+              <Switch>
+                  <Route exact path={'/'} component={LandingPage} />
+                  <Route component={Routes} />
+              </Switch>
+          </div>
+      </Router>
   );
 }
 
