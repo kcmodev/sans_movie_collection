@@ -1,10 +1,10 @@
 import {getAllMovies} from "../actions";
 import {useEffect} from "react";
-import { connect } from 'react-redux';
+import Movie from "./Movie";
 
 const DisplayStoredMovies = (getMovies) => {
     useEffect(() => {
-        getAllMovies();
+        // getAllMovies();
     }, [getMovies]);
 
     return (
@@ -16,8 +16,4 @@ const DisplayStoredMovies = (getMovies) => {
     );
 };
 
-const mapStateToProps = (state) => ({
-    movie: state.movie
-});
-
-export default connect(mapStateToProps, {getAllMovies})(DisplayStoredMovies);
+export default DisplayStoredMovies;
